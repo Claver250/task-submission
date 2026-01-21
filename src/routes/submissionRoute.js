@@ -5,8 +5,9 @@ const submissionController = require('../controllers/submissionController');
 const authenticate = require('../middlewares/authMiddleware');
 
 router.post('/', authenticate, submissionController.createSubmission);
+router.get('/', authenticate, submissionController.getAllSubmissions);
 router.get('/:id', authenticate, submissionController.getSubmissionById);
-router.put('/:id/status', authenticate, submissionController.updateSubmissionStatus);
+router.patch('/:id/', authenticate, submissionController.updateSubmissionStatus);
 router.delete('/:id', authenticate, submissionController.deleteSubmission);
 
 module.exports = router;

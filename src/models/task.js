@@ -6,7 +6,8 @@ const Task = db.define('Task', {
     id: {
         type: DataTypes.UUID,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        defaultValue: UUIDV4
     },
     title: {
         type: DataTypes.STRING,

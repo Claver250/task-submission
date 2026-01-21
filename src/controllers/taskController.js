@@ -3,6 +3,10 @@ const Task = require('../models/task');
 exports.createTask = async (req, res) => {
     try{
         const {title, description, deadline, track, requirements} = req.body;
+        const existingTask = await Task.findOne({where: {title}});
+        if(existingTask){
+            return res.status(409).json({message: 'Task with this title already exists'});
+        }
         const task = await Task.create({
             title,
             description,
@@ -36,7 +40,7 @@ exports.getAllTasks = async (req, res) => {
 exports.getTaskById = async (req, res) => {
     try{
         const{id} = req.params;
-        const task = await TableHints.findByPk(id);
+        const task = await Task.findByPk(id);
         if(!task){
             return res.status(404).json({message: 'Task not found'});
         }

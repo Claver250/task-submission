@@ -28,10 +28,23 @@ exports.createSubmission = async (req, res) => {
     }
 };
 
+exports.getAllSubmissions = async (req, res) => {
+    try{
+        const Submissions = await Submission.findAll();
+        return res.status(200).json({
+            message: 'Submissions retrieved successfully',
+            data: Submissions
+        });
+    }catch(error){
+        console.error(error);
+        return res.status(500).json({message: 'Internal server error'});
+    }
+}
+
 exports.getSubmissionById = async (req, res) => {
     try{
         const {id} = req.params
-        const submission = await submission.findByPk(id);
+        const submission = await Submission.findByPk(id);
         if(!submission) return res.status(404).json({message: 'Submission not found'});
         return res.status(200).json({
             message: 'Submission retrieved successfully',

@@ -27,7 +27,7 @@ const Submission = db.define('Submission', {
         }
     },
     status: {
-        type: DataTypes.ENUM('submitted', 'graded', 'late',),
+        type: DataTypes.ENUM('submitted', 'under review', 'approved', 'changes requested', 'rejected'),
         allowNull: false,
         defaultValue: 'submitted'
     },

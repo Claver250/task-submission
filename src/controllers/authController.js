@@ -22,13 +22,13 @@ exports.register = async (req, res) => {
             password: hashedPassword,
             track
         });
-        const token = generateToken({id: user.id, email: user.email});
+        const token = generateToken({id: user.id, email: user.email, track: user.track});
         return res.status(201).json({
             message: 'User registered successfully',
             user: {id: user.id, name: user.name, email: user.email, track: user.track},
             token
         });
-   } catch (error) {
+    } catch (error) {
         console.error(error);
         return res.status(500).json({message: 'Internal server error'});
     }
