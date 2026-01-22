@@ -25,6 +25,11 @@ const User = db.define('User', {
     track: {
         type: DataTypes.ENUM(...TRACKS),
         allowNull: false
+    },
+    role: {
+        type: DataTypes.ENUM('intern', 'admin'),
+        allowNull: false,
+        defaultValue: 'intern'
     }
 }, {
     timestamps: true

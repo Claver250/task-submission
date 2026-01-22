@@ -6,11 +6,7 @@ const { exist } = require('joi');
 
 exports.register = async (req, res) => {
     try {
-        const {error, value} = registerSchema.validate(req.body);
-        if (error) {
-            return res.status(400).json({message: error.message});
-        }
-        const {name, email, password, track} = value;
+        const {name, email, password, track, role} = req.body;
         const existingUser = await User.findOne({where: {email}});
         if (existingUser) {
             return res.status(409).json({message: 'User with this email already exists'});
@@ -20,12 +16,13 @@ exports.register = async (req, res) => {
             name,
             email,
             password: hashedPassword,
-            track
+            track,
+            role
         });
-        const token = generateToken({id: user.id, email: user.email, track: user.track});
+        const token = generateToken({id: user.id, email: user.email, track: user.track, role: user.role});
         return res.status(201).json({
             message: 'User registered successfully',
-            user: {id: user.id, name: user.name, email: user.email, track: user.track},
+            user: {id: user.id, name: user.name, email: user.email, track: user.track, role: user.role},
             token
         });
     } catch (error) {
@@ -36,11 +33,7 @@ exports.register = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        const {error, value} = loginSchema.validate(req.body);
-        if (error) {
-            return res.status(400).json({message: error.message});
-        }
-        const {email, password} = value;
+        const {email, password} = req.body;
         const user = await User.findOne({where: {email}});
         if (!user) {
             return res.status(401).json({message: 'Invalid email or password'});
@@ -49,9 +42,11 @@ exports.login = async (req, res) => {
         if (!isPasswordValid) {
             return res.status(401).json({message: 'Invalid email or password'});
         }
-        const token = generateToken({id: user.id, email: user.email});
+        const token = generateToken({id: user.id, email: user.email, track: user.track, role: user.role});
         return res.status(200).json({
             message: 'Login successful',
+            track: user.track,
+            role: user.role,
             token
         });
     } catch (error) {

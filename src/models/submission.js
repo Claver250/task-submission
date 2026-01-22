@@ -10,7 +10,7 @@ const Submission = db.define('Submission', {
         allowNull: false,
         defaultValue: UUIDV4
     },
-    task_id: {
+    taskId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
@@ -18,7 +18,7 @@ const Submission = db.define('Submission', {
             key: 'id'
         }
     },
-    user_id: {
+    userId: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
@@ -41,10 +41,10 @@ const Submission = db.define('Submission', {
     }
 });
 
-User.hasMany(Submission, { foreignKey: 'user_id' });
-Submission.belongsTo(User, { foreignKey: 'user_id' });
+User.hasMany(Submission, { foreignKey: 'userId' });
+Submission.belongsTo(User, { foreignKey: 'userId' });
 
-Task.hasMany(Submission, { foreignKey: 'task_id' });
-Submission.belongsTo(Task, { foreignKey: 'task_id' });
+Task.hasMany(Submission, { foreignKey: 'taskId' });
+Submission.belongsTo(Task, { foreignKey: 'taskId' });
 
 module.exports = Submission;
