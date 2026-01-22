@@ -14,14 +14,22 @@ A RESTful API for managing task submissions with JWT authentication
 - Runtime: Node.js
 - Framework: Express.js
 - Database: PostgreSQL
+<<<<<<< HEAD
 - Authentication: JWT
+=======
+- Authenticcation: JWT
+>>>>>>> 49e514692e8a239b55f450796686ccbd3e05c807
 - Validation: Joi
 - Testing: Postman
 
 ## Installation
 ### 1. Clone the Repository
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/Claver250/task-submission
+=======
+git clone https://github.com/yourusername/internship-task-submission.git
+>>>>>>> 49e514692e8a239b55f450796686ccbd3e05c807
 cd internship-task-submission
 ```
 ### 2. Install Dependencies
