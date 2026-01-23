@@ -1,4 +1,5 @@
-require('dotenv').config(); // This loads your .env file
+require('dotenv').config();
+require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') }); // This loads your .env file
 
 module.exports = {
   development: {

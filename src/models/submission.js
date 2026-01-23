@@ -1,50 +1,48 @@
-const {sequelize, DataTypes, UUIDV4} = require('sequelize');
-const db = require('../config/database');
-const User = require('./user');
-const Task = require('./task');
+'use strict';
 
-const Submission = db.define('Submission', {
+module.exports = (sequelize, DataTypes) => {
+  const Submission = sequelize.define('Submission', {
     id: {
-        type: DataTypes.UUID,
-        primaryKey: true,
-        allowNull: false,
-        defaultValue: UUIDV4
+      type: DataTypes.UUID,
+      primaryKey: true,
+      allowNull: false,
+      defaultValue: DataTypes.UUIDV4
     },
     taskId: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        references: {
-            model: Task,
-            key: 'id'
-        }
+      type: DataTypes.UUID,
+      allowNull: false,
+      references: {
+        model: 'Tasks', // Use the table name string here
+        key: 'id'
+      }
     },
     userId: {
-        type: DataTypes.UUID,
-        allowNull: false,
-        references: {
-            model: User,
-            key: 'id'
-        }
+      type: DataTypes.UUID,
+      allowNull: false,
+      references: {
+        model: 'Users', // Use the table name string here
+        key: 'id'
+      }
     },
     status: {
-        type: DataTypes.ENUM('submitted', 'under review', 'approved', 'changes requested', 'rejected'),
-        allowNull: false,
-        defaultValue: 'submitted'
+      type: DataTypes.ENUM('submitted', 'under review', 'approved', 'changes requested', 'rejected'),
+      allowNull: false,
+      defaultValue: 'submitted'
     },
     submissionLink: {
-            type: DataTypes.STRING,
-            allowNull: true
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false
+      type: DataTypes.STRING,
+      allowNull: true
     }
-});
+  }, {
+    timestamps: true, // This automatically handles createdAt
+    tableName: 'Submissions'
+  });
 
-User.hasMany(Submission, { foreignKey: 'userId' });
-Submission.belongsTo(User, { foreignKey: 'userId' });
+  Submission.associate = (models) => {
+    // Relationships are defined here using the 'models' object
+    Submission.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
+    Submission.belongsTo(models.Task, { foreignKey: 'taskId', as: 'task' });
+  };
 
-Task.hasMany(Submission, { foreignKey: 'taskId' });
-Submission.belongsTo(Task, { foreignKey: 'taskId' });
-
-module.exports = Submission;
+  return Submission;
+};

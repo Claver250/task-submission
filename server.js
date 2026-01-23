@@ -1,7 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const PORT = process.env.PORT || 4187;
-const db = require('./src/config/database');
+const db = require('./src/models');
 
 const app = express();
 const authRoute = require('./src/routes/authRoute');
@@ -22,8 +22,8 @@ app.use('/api/submissions', submissionRoute);
 
 app.listen(PORT, async () => {
     try {
-        await db.authenticate();
-        await db.sync();
+        await db.sequelize.authenticate();
+        await db.sequelize.sync();
         console.log('Database connected and synchronized');
         console.log(`Server is running on port ${PORT}`);
     } catch (error) {
