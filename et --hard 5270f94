@@ -1,0 +1,16 @@
+[33m71bfada[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: rebase (abort): returning to refs/heads/main
+[33m71bfada[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{1}: rebase (abort): returning to refs/heads/main
+[33m5270f94[m HEAD@{2}: commit: Priority 1
+[33mf5caf36[m HEAD@{3}: commit: chore: remove node_modules and env from version control
+[33m254ad6f[m HEAD@{4}: commit (merge): chore: resolved merge conflicts
+[33m973f863[m HEAD@{5}: commit: Prioity 2 & 3 corrections
+[33m71bfada[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{6}: commit: Third Commit
+[33mf43fa2d[m HEAD@{7}: commit: chore: remove node_modules and .env from tracking
+[33mad7a058[m HEAD@{8}: commit: Third Commit
+[33md00a9ed[m HEAD@{9}: pull origin main: Fast-forward
+[33m12264bd[m HEAD@{10}: commit: update: add sensitive files to gitignore
+[33mcd7eb41[m HEAD@{11}: commit: Done: Applied .gitignore to all files
+[33m2ed002e[m HEAD@{12}: commit: chore: apply gitignore and untrack unwanted files
+[33m19e1de5[m HEAD@{13}: commit: Initial Commit
+[33m7409eb1[m HEAD@{14}: Branch: renamed refs/heads/master to refs/heads/main
+[33m7409eb1[m HEAD@{16}: commit (initial): Initial Commit

@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "bd5f0369-dd54-4398-b4e7-8c6f8e4a5a5d",
+    "name": "submission",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46750023"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3OWQ0MzQ5LWQ2MzEtNGI5OC04NDQ3LTZmYjA2ZWZiOWQ3OCIsImVtYWlsIjoiY2xhdmVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY4OTI4ODg5LCJleHAiOjE3NjkwMTUyODl9.qEx3vpZFWgA5bjvj2io0Br-SNZCWPvrvC1QLzWfrigw",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Build a Simple Internship Task Submission API\",\r\n    \"description\": \"Create a RESTful API for managing internship task submissions and teacking\",\r\n    \"deadline\": \"2026-01-24T23:59:00+01:00\",\r\n    \"track\": \"BACKEND-DEV\",\r\n    \"requirements\": \"Technology Stack, API Endpoints, Database Schema, Requirements, Deliverables\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/tasks/",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "tasks",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc3OWQ0MzQ5LWQ2MzEtNGI5OC04NDQ3LTZmYjA2ZWZiOWQ3OCIsImVtYWlsIjoiY2xhdmVyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY4OTk1NTc3LCJleHAiOjE3NjkwODE5Nzd9.4kFAiSAfH2iAZ2lmQC6KipynA7jG3LsKiUs7sp55bRA",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
