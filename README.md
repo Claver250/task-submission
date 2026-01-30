@@ -56,6 +56,8 @@ npm start
 ## API Documentation
 ### Base URL
 https://localhost:4187/api
+### Live API URL
+https://task-submission-2.onrender.com
 ### Authentication
 Method,Endpoint,Description
 POST,/auth/register,Register a new user
