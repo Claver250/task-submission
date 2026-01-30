@@ -1,5 +1,7 @@
 'use strict';
 
+const TRACKS = require('../constants/track');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
@@ -8,7 +10,7 @@ module.exports = {
         type: Sequelize.UUID,
         primaryKey: true,
         allowNull: false,
-        defaultValue: UUIDV4
+        defaultValue: Sequelize.UUIDV4
       },
       title: {
         type: Sequelize.STRING,

@@ -1,46 +1,51 @@
 'use strict';
 
+const Task = require('../models/task');
+const User = require('../models/user');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
      await queryInterface.createTable('Submissions', {
       id: {
-        type: DataTypes.UUID,
+        type: Sequelize.UUID,
         primaryKey: true,
         allowNull: false,
-        defaultValue: UUIDV4
+        defaultValue: Sequelize.UUIDV4
       },
       taskId: {
-        type: DataTypes.UUID,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
-            model: Task,
+            model: 'Task',
             key: 'id'
         }
       },
       userId: {
-        type: DataTypes.UUID,
+        type: Sequelize.UUID,
         allowNull: false,
         references: {
-            model: User,
+            model: 'User',
             key: 'id'
         }
       },
       status: {
-        type: DataTypes.ENUM('submitted', 'under review', 'approved', 'changes requested', 'rejected'),
+        type: Sequelize.ENUM('pending','submitted', 'under review', 'approved', 'changes requested', 'rejected'),
         allowNull: false,
         defaultValue: 'submitted'
       },
       submissionLink: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
       },
-      createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false
-      }
+      submittedAt: {
+        type: Sequelize.DATE,
+        allowNull: true
+      },
+    },{
+      timestamps: true, 
+      tableName: 'Submissions'
     });
-     
   },
 
   async down (queryInterface, Sequelize) {

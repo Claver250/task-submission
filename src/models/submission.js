@@ -1,5 +1,8 @@
 'use strict';
 
+const Task = require('./task');
+const User = require('./user');
+
 module.exports = (sequelize, DataTypes) => {
   const Submission = sequelize.define('Submission', {
     id: {
@@ -12,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: 'Tasks', // Use the table name string here
+        model: 'Tasks', 
         key: 'id'
       }
     },
@@ -20,26 +23,29 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: 'Users', // Use the table name string here
+        model: 'Users', 
         key: 'id'
       }
     },
     status: {
-      type: DataTypes.ENUM('submitted', 'under review', 'approved', 'changes requested', 'rejected'),
+      type: DataTypes.ENUM('pending','submitted', 'under review', 'approved', 'changes requested', 'rejected'),
       allowNull: false,
-      defaultValue: 'submitted'
+      defaultValue: 'pending'
     },
     submissionLink: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    submittedAt: {
+        type: DataTypes.DATE,
+        allowNull: true
     }
   }, {
-    timestamps: true, // This automatically handles createdAt
+    timestamps: true, 
     tableName: 'Submissions'
   });
 
   Submission.associate = (models) => {
-    // Relationships are defined here using the 'models' object
     Submission.belongsTo(models.User, { foreignKey: 'userId', as: 'user' });
     Submission.belongsTo(models.Task, { foreignKey: 'taskId', as: 'task' });
   };

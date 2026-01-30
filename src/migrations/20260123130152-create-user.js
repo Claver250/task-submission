@@ -1,34 +1,36 @@
 'use strict';
 
+const TRACKS = require('../constants/track');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('Users', {
       id: {
-        type: DataTypes.UUID,
+        type: Sequelize.UUID,
         primaryKey: true,
         allowNull: false,
-        defaultValue: UUIDV4
+        defaultValue: Sequelize.UUIDV4
       },
       name: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       email: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
         unique: true
       },
       password: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       track: {
-        type: DataTypes.ENUM(...TRACKS),
+        type: Sequelize.ENUM(...TRACKS),
         allowNull: false
       },
       role: {
-        type: DataTypes.ENUM('intern', 'admin'),
+        type: Sequelize.ENUM('intern', 'admin'),
         allowNull: false,
         defaultValue: 'intern'
       }

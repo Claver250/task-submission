@@ -1,0 +1,489 @@
+{
+  "info": {
+    "_postman_id": "a02e02ee-8bb1-4371-8d70-7847ec077177",
+    "name": "Internship Task",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46750023"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Claver\",\r\n  \"email\": \"claver@example.com\",\r\n  \"password\": \"SecurePassw123\",\r\n  \"track\": \"BACKEND-DEV\",\r\n  \"role\": \"intern\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/auth/register",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"UmmarSquare\",\r\n  \"email\": \"Square@example.com\",\r\n  \"password\": \"SecurePassword123\",\r\n  \"role\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/auth/register",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxYWY3MWU4LWU0ODUtNDc2Ni05OTJjLWJkZjI0ZjE5M2Y3MSIsImVtYWlsIjoiY2xhdmVyQGV4YW1wbGUuY29tIiwidHJhY2siOiJCQUNLRU5ELURFViIsInJvbGUiOiJpbnRlcm4iLCJpYXQiOjE3Njk3MzEzNTcsImV4cCI6MTc2OTgxNzc1N30.FJd9XZ9hUAbjlzxeZZaEBJnXS8Oa-vTRL8vPAL2Cs5g",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"claver@example.com\",\r\n  \"password\": \"SecurePassw123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/auth/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"Square@example.com\",\r\n  \"password\": \"SecurePassword123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/auth/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Build a Simple Internship Task Submission API\",\r\n    \"description\": \"Create a RESTful API for managing internship task submissions and tracking\",\r\n    \"deadline\": \"2026-01-30T23:59:00+01:00\",\r\n    \"track\": \"BACKEND-DEV\",\r\n    \"requirements\": \"Technology Stack, API Endpoints, Database Schema, Requirements, Deliverables\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/tasks",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\": \"Design a User Dashboard Wireframe & Prototype\",\r\n    \"description\": \"Design a responsive dashboard for UmmahSquare's internship progress, current stage, and tasks\",\r\n    \"deadline\": \"2026-01-24T23:59:00+01:00\",\r\n    \"track\": \"PRODUCT-DESIGN\",\r\n    \"requirements\": \"Platform, Deliverable, Dashboard Home, Task Details, Profile Page\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/tasks",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:4187/api/tasks",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxYWY3MWU4LWU0ODUtNDc2Ni05OTJjLWJkZjI0ZjE5M2Y3MSIsImVtYWlsIjoiY2xhdmVyQGV4YW1wbGUuY29tIiwidHJhY2siOiJCQUNLRU5ELURFViIsInJvbGUiOiJpbnRlcm4iLCJpYXQiOjE3Njk3MzE4MDEsImV4cCI6MTc2OTgxODIwMX0.00nC2U7oLd1fipS4dDl0Fg51lYj8R8raIyeEnNbHosI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:4187/api/tasks/my",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "tasks",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"taskId\": \"643e5d7f-fe0a-46f3-8f35-97d84d6efb2d\",\r\n  \"userId\": \"51af71e8-e485-4766-992c-bdf24f193f71\",\r\n  \"submissionLink\": \"https://github.com/Claver250/task-submission-repo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/submissions",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "submissions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxYWY3MWU4LWU0ODUtNDc2Ni05OTJjLWJkZjI0ZjE5M2Y3MSIsImVtYWlsIjoiY2xhdmVyQGV4YW1wbGUuY29tIiwidHJhY2siOiJCQUNLRU5ELURFViIsInJvbGUiOiJpbnRlcm4iLCJpYXQiOjE3Njk3MzE4MDEsImV4cCI6MTc2OTgxODIwMX0.00nC2U7oLd1fipS4dDl0Fg51lYj8R8raIyeEnNbHosI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"submissionId\": \"916a702d-9581-4e34-8f89-9f306f144198\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/submissions/submit",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "submissions",
+            "submit"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:4187/api/submissions",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "submissions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUxYWY3MWU4LWU0ODUtNDc2Ni05OTJjLWJkZjI0ZjE5M2Y3MSIsImVtYWlsIjoiY2xhdmVyQGV4YW1wbGUuY29tIiwidHJhY2siOiJCQUNLRU5ELURFViIsInJvbGUiOiJpbnRlcm4iLCJpYXQiOjE3Njk3MzE4MDEsImV4cCI6MTc2OTgxODIwMX0.00nC2U7oLd1fipS4dDl0Fg51lYj8R8raIyeEnNbHosI",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/submissions/my",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "submissions",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"approved\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:4187/api/submissions/916a702d-9581-4e34-8f89-9f306f144198/update",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "submissions",
+            "916a702d-9581-4e34-8f89-9f306f144198",
+            "update"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODZhNmM2LTNjMDAtNGZiZS1iMTJkLTk0OTk0OGI2MzhkMiIsImVtYWlsIjoiU3F1YXJlQGV4YW1wbGUuY29tIiwidHJhY2siOm51bGwsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2OTczMTQxNywiZXhwIjoxNzY5ODE3ODE3fQ.rKIOktcRVFMmZBV0r1yHCaj45-lmDU_B5xGNDkYHwto",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:4187/api/analytics/dashboard",
+          "host": [
+            "localhost"
+          ],
+          "port": "4187",
+          "path": [
+            "api",
+            "analytics",
+            "dashboard"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

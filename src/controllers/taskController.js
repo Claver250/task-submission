@@ -1,4 +1,4 @@
-const Task = require('../models/task');
+const {Task} = require('../models');
 const {taskSchema} = ('../validators/taskValidate')
 
 exports.createTask = async (req, res) => {
@@ -27,10 +27,19 @@ exports.createTask = async (req, res) => {
 
 exports.getAllTasks = async (req, res) => {
     try{
-        const tasks = await Task.findAll();
+        const {limit, offset} = req.query
+        const {rows, count} = await Task.findAndCountAll({
+            limit,
+            offset,
+            order: [['createdAt','DESC',]]
+        });
         return res.status(200).json({
             message: 'Tasks retrieved successfully',
-            data: tasks
+            count,
+            limit,
+            offset,
+            results: rows.length,
+            data: rows
         });
     }catch(error){
         console.error(error);
@@ -38,16 +47,28 @@ exports.getAllTasks = async (req, res) => {
     }
 };
 
-exports.getTaskById = async (req, res) => {
+exports.getMyTask = async (req, res) => {
     try{
-        const{id} = req.params;
-        const task = await Task.findByPk(id);
-        if(!task){
-            return res.status(404).json({message: 'Task not found'});
-        }
+        const{limit, offset} = req.query;
+        const sortBy = req.query.sortBy || 'createdAt'; 
+        const order = req.query.order || 'DESC';
+        const userTrack = req.user.track;
+        const {rows: tasks, count} = await Task.findAndCountAll({
+            where: {
+                track: userTrack
+            },
+            limit,
+            offset,
+            order: [[sortBy, order]]
+        });
         res.status(200).json({
             message: 'Task retrieved successfully',
-            data: task
+            count,
+            limit,
+            offset,
+            sortBy,
+            order,
+            data: tasks
         });
     }catch(error){
         console.error(error);

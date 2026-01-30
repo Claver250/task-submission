@@ -3,13 +3,12 @@
 const TRACKS = require('../constants/track');
 
 module.exports = (sequelize, DataTypes) => {
-    // We use 'sequelize' (passed in as an argument) instead of 'db'
     const User = sequelize.define('User', {
         id: {
             type: DataTypes.UUID,
             primaryKey: true,
             allowNull: false,
-            defaultValue: DataTypes.UUIDV4 // Use DataTypes.UUIDV4 here
+            defaultValue: DataTypes.UUIDV4
         },
         name: {
             type: DataTypes.STRING,
@@ -26,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         track: {
             type: DataTypes.ENUM(...TRACKS),
-            allowNull: false
+            allowNull: true
         },
         role: {
             type: DataTypes.ENUM('intern', 'admin'),
